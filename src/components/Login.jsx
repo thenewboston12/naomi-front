@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form, Button, Card, Alert } from "react-bootstrap";
+import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import {Link, useNavigate} from 'react-router-dom'
 
@@ -19,7 +19,7 @@ export default function Login() {
         setError('')
         setLoading(true)
         await login(emailRef.current.value, passwordRef.current.value);
-        navigate("/")
+        navigate("/surveys")
      } catch {
         setError('Failed to sign in')
      }
@@ -27,7 +27,9 @@ export default function Login() {
 }
 
   return (
-    <>
+    
+    <Container className="d-flex align-items-center justify-content-center" style={{minHeight:"100vh"}}>
+        <div className='w-100' style={{maxWidth: '400px'}}>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
@@ -51,9 +53,10 @@ export default function Login() {
            </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2" style={{color:"white" }}>
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
-    </>
+      </div>
+    </Container>
   );
 }

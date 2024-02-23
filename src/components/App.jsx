@@ -10,19 +10,20 @@ import Dashboard from './Dashboard.jsx'
 import PrivateRoute from './PrivateRoute.jsx'
 import ForgotPassword from './ForgotPassword.jsx'
 import UpdateProfile from './UpdateProfile.jsx'
+import Surveys from './Surveys.jsx'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Container className="d-flex align-items-center justify-content-center" style={{minHeight:"100vh"}}>
-        <div className='w-100' style={{maxWidth: '400px'}}>
+    
             <Router>
                 <AuthProvider>
                     <Routes>
                         <Route element={<PrivateRoute/>}>
                             <Route element={<Dashboard/>} path="/" exact/>
+                            <Route element={<Surveys/>} path="/surveys" exact/>
                             <Route element={<UpdateProfile/>} path="/update-profile" exact/>
                         </Route>
                         <Route path='/signup' element={<Signup/>} />
@@ -32,9 +33,7 @@ function App() {
                     </Routes>
                 </AuthProvider>
             </Router>
-        </div>
-    
-    </Container>
+        
   
   )
 }

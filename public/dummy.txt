@@ -1,0 +1,15 @@
+
+
+const appendMessage = (myHtml) => {
+        const userHtml = myHtml; // Your HTML snippet
+        setChats(prevMessages => [...prevMessages, userHtml]);
+      };
+
+body,
+html {
+    /* height: 100% !important;
+    margin: 0 !important;
+    background: rgb(44, 47, 59) !important;
+    background: -webkit-linear-gradient(to right, rgb(40, 59, 34), rgb(54, 60, 70), rgb(32, 32, 43)) !important;
+    background: linear-gradient(to right, rgb(38, 51, 61), rgb(50, 55, 65), rgb(33, 33, 78)) !important; */
+}
